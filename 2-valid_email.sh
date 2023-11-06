@@ -14,12 +14,17 @@ input_file="email_list.txt"
   # 6. The @ symbol separates the username and the domain name
   # 7. The . separates the domain name and the top-level domain (TLD)
   # 8. The regular expression should match the entire email address
-email_regex=
+email_regex="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[a-z]{2,}$"
 # use grep to filter and display valid email addresses using the $email_regex variable
-valid_email_count=
+valid_emails=$(grep -E -o "$email_regex" "$input_file")
+valid_email_count=$(echo "$valid_emails" | wc -l)
 # use grep to filter and display invalid email addresses using the $email_regex variable
-invalid_emails=
+invalid_emails=$(grep -E -v "$email_regex" "$input_file")
+invalid_email_count=$(echo "invalid_emails" | wc -l)
 
 echo "Number of valid email addresses: $valid_email_count"
+echo "Valid email addresses: "
+echo "$valid_emails"
+echo "Number of invalid email addresses: $invalid_email_count"
 echo "Invalid email addresses: "
 echo "$invalid_emails"
