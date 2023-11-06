@@ -1,0 +1,34 @@
+{
+  "tests": [
+    {
+      "name": "Test Filter",
+      "setup": "",
+      "run": "./test_filter.sh",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "Test Valid Email",
+      "setup": "",
+      "run": "./test_valid_email.sh",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "Test Extract Domain",
+      "setup": "",
+      "run": "./test_extract_domain.sh",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": null
+    }
+  ]
+}
